@@ -5,32 +5,32 @@
 class Confetti < Formula
   desc ""
   homepage "https://confetti-cms.com"
-  version "0.4.5"
+  version "0.4.6"
 
   on_macos do
-    url "https://github.com/confetti-cms/client/releases/download/0.4.5/client_0.4.5_darwin_all.tar.gz"
-    sha256 "3d3369dc1782300825a5dedc7856e8e27de06ecdfab394a8a994df6e9e861883"
+    url "https://github.com/confetti-cms/client/releases/download/0.4.6/client_0.4.6_darwin_all.tar.gz"
+    sha256 "b9f9e04ba4ff47b3bd66e6b56149ab92dda35a31b3fde52b9611f0b78de8fb9a"
 
     def install
-      bin.install "client"
+      bin.install "some_other_name"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/confetti-cms/client/releases/download/0.4.5/client_0.4.5_linux_amd64.tar.gz"
-      sha256 "c87862b341904fa101164b493388f1d037bf671b6ab216e2c96c6479a018583a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/confetti-cms/client/releases/download/0.4.6/client_0.4.6_linux_arm64.tar.gz"
+      sha256 "b7fa6f98198d1848ff2cbebe9bea8d4e0879ff20116eb7739c313577635be3e2"
 
       def install
-        bin.install "confetti"
+        bin.install "some_other_name"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/confetti-cms/client/releases/download/0.4.5/client_0.4.5_linux_arm64.tar.gz"
-      sha256 "9f109943015aafcef95ab3e596cb094db78b3e657e283e0e46b042b3e9472c65"
+    if Hardware::CPU.intel?
+      url "https://github.com/confetti-cms/client/releases/download/0.4.6/client_0.4.6_linux_amd64.tar.gz"
+      sha256 "8c79ea592cd5a6286d2f8e759feadf612afe098089ebb87fcf128313fa55f751"
 
       def install
-        bin.install "confetti"
+        bin.install "some_other_name"
       end
     end
   end
