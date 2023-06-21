@@ -5,14 +5,14 @@
 class Confetti < Formula
   desc ""
   homepage "https://confetti-cms.com"
-  version "0.4.12"
+  version "0.4.22"
 
   on_macos do
     url "https://github.com/confetti-cms/client/releases/download/0.4.12/client_0.4.12_darwin_all.tar.gz"
     sha256 "274137952be1a28394943dde7119f9c95218d876308893c2fd52dcc3e732226d"
 
     def install
-      bin.install "client"
+      bin.install "confetti"
     end
   end
 
