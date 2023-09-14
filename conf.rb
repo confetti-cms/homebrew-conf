@@ -5,11 +5,11 @@
 class Conf < Formula
   desc ""
   homepage "https://confetti-cms.com"
-  version "0.5.6"
+  version "0.6.0"
 
   on_macos do
-    url "https://github.com/confetti-cms/conf/releases/download/0.5.6/conf_0.5.6_darwin_all.tar.gz"
-    sha256 "848d9a57d3c1c3b06878af70e615b223a1244b09c0b1c0fbd59db2df82a870a3"
+    url "https://github.com/confetti-cms/conf/releases/download/0.6.0/conf_0.6.0_darwin_all.tar.gz"
+    sha256 "86f6ab299f9fab1e538be1731a1dcf0624e684209e611c435f62a39127f84889"
 
     def install
       bin.install "conf"
@@ -17,17 +17,17 @@ class Conf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/confetti-cms/conf/releases/download/0.5.6/conf_0.5.6_linux_arm64.tar.gz"
-      sha256 "9f976bfceec6f8695170ab4f9391edacdef710cd16c79fd3c29265c5676175b8"
+    if Hardware::CPU.intel?
+      url "https://github.com/confetti-cms/conf/releases/download/0.6.0/conf_0.6.0_linux_amd64.tar.gz"
+      sha256 "5c5fff91e05951af8bcdef9d5eeb5335e3ecb2eaa75b75da0f559c599f3eade6"
 
       def install
         bin.install "conf"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/confetti-cms/conf/releases/download/0.5.6/conf_0.5.6_linux_amd64.tar.gz"
-      sha256 "a3298e6107dd3c9e32d75b46207d48970b9daa7662ba406df22a573a221c76f2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/confetti-cms/conf/releases/download/0.6.0/conf_0.6.0_linux_arm64.tar.gz"
+      sha256 "b89a88774bbabf8a24366f00cba85020c772c89c681bc22676e0463aa548ba07"
 
       def install
         bin.install "conf"
