@@ -5,20 +5,20 @@
 class Conf < Formula
   desc ""
   homepage "https://confetti-cms.com"
-  version "1.22.0"
+  version "1.23.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/confetti-cms/conf/releases/download/1.22.0/conf_Darwin_x86_64.tar.gz"
-      sha256 "179767a95ea48316fdd3130170b30a217171cdbddb2da230c3cce5808b12e7f2"
+      url "https://github.com/confetti-cms/conf/releases/download/1.23.0/conf_Darwin_x86_64.tar.gz"
+      sha256 "3e8f2dacdbc7fd42fb986e088be2ac0f76cbce2be72eb0fee9f1b30f97ab2c45"
 
       def install
         bin.install "conf"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/confetti-cms/conf/releases/download/1.22.0/conf_Darwin_arm64.tar.gz"
-      sha256 "5fcfe791b9540db4270f1bfccf9a1f8b46b5d9f551057994b22027ae9d1ee469"
+      url "https://github.com/confetti-cms/conf/releases/download/1.23.0/conf_Darwin_arm64.tar.gz"
+      sha256 "eaea98db8e4bfec481785829b8506bb774922d2c58f772229910b457ec22951a"
 
       def install
         bin.install "conf"
@@ -29,8 +29,8 @@ class Conf < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/confetti-cms/conf/releases/download/1.22.0/conf_Linux_x86_64.tar.gz"
-        sha256 "d2622a3629ba2a6514ee65943fc26853be2b8d9a9f4892183305f5b52d651319"
+        url "https://github.com/confetti-cms/conf/releases/download/1.23.0/conf_Linux_x86_64.tar.gz"
+        sha256 "4c818d38db478630b81c11f0200a0d9a112e083ad182d5f58852b812ee26f4b2"
 
         def install
           bin.install "conf"
@@ -39,8 +39,8 @@ class Conf < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/confetti-cms/conf/releases/download/1.22.0/conf_Linux_arm64.tar.gz"
-        sha256 "1c26c5c86354488fcb8fb4b3a3621ae63878728dfeecb2ab2ab1d495ff9f140f"
+        url "https://github.com/confetti-cms/conf/releases/download/1.23.0/conf_Linux_arm64.tar.gz"
+        sha256 "dab0d23a4f7600c58533c0b5029d60eed68848de329fbaf1027b68671c963fef"
 
         def install
           bin.install "conf"
