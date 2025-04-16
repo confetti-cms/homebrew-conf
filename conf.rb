@@ -5,32 +5,46 @@
 class Conf < Formula
   desc ""
   homepage "https://confetti-cms.com"
-  version "0.7.6"
+  version "1.22.0"
 
   on_macos do
-    url "https://github.com/confetti-cms/conf/releases/download/0.7.6/conf_0.7.6_darwin_all.tar.gz"
-    sha256 "fbd765dc70d0892cfd77ce831d27d6dd5ff1b96b1fa487172af7f23e4b21d2c4"
-
-    def install
-      bin.install "conf"
-    end
-  end
-
-  on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/confetti-cms/conf/releases/download/0.7.6/conf_0.7.6_linux_amd64.tar.gz"
-      sha256 "77b8678883c28a3ef77cf7c82e22bf32836353baaa11586f4d964cad51ca7481"
+      url "https://github.com/confetti-cms/conf/releases/download/1.22.0/conf_Darwin_x86_64.tar.gz"
+      sha256 "179767a95ea48316fdd3130170b30a217171cdbddb2da230c3cce5808b12e7f2"
 
       def install
         bin.install "conf"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/confetti-cms/conf/releases/download/0.7.6/conf_0.7.6_linux_arm64.tar.gz"
-      sha256 "6ca35751ce7078f3f8673011dcf694de0f0a11e90cbba471b820d5f44d828148"
+    if Hardware::CPU.arm?
+      url "https://github.com/confetti-cms/conf/releases/download/1.22.0/conf_Darwin_arm64.tar.gz"
+      sha256 "5fcfe791b9540db4270f1bfccf9a1f8b46b5d9f551057994b22027ae9d1ee469"
 
       def install
         bin.install "conf"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/confetti-cms/conf/releases/download/1.22.0/conf_Linux_x86_64.tar.gz"
+        sha256 "d2622a3629ba2a6514ee65943fc26853be2b8d9a9f4892183305f5b52d651319"
+
+        def install
+          bin.install "conf"
+        end
+      end
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/confetti-cms/conf/releases/download/1.22.0/conf_Linux_arm64.tar.gz"
+        sha256 "1c26c5c86354488fcb8fb4b3a3621ae63878728dfeecb2ab2ab1d495ff9f140f"
+
+        def install
+          bin.install "conf"
+        end
       end
     end
   end
